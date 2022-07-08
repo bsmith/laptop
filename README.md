@@ -8,6 +8,7 @@ It can be run multiple times on the same machine safely. It installs, upgrades, 
 
 We support:
 
+* macOS Monterey (12)
 * macOS Big Sur (11)
 * macOS Catalina (10.15)
 
@@ -39,17 +40,6 @@ You can repeat this by running the following lines in terminal:
 curl --remote-name https://raw.githubusercontent.com/codeclan/laptop/master/laptop_install_test
 sh laptop_install_test
 ```
---- 
-> Please follow instructions at the provided [link](apple_silicon.md) if you see -
-
-
-![Terminal](images/terminal_msg.png)
-
-(**NOTE** - You will need to run the script again)
-
----
-
-
 ## What it sets up
 
 ### macOS tools:
@@ -82,7 +72,7 @@ sh laptop_install_test
 ### GUI Apps:
 
 * [Google Chrome](https://www.google.com/chrome/) for web browsing and development
-* [Atom](https://atom.io/) for text editing
+* [VS Code](https://code.visualstudio.com/) for text editing
 * [Slack](https://slack.com) for team chat
 * [IntelliJ IDEA CE](https://www.jetbrains.com/idea/) for Java development
 * [MongoDB Compass](https://www.mongodb.com/products/compass) for accessing MongoDB databases from a GUI
