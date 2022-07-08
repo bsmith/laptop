@@ -123,7 +123,7 @@ do
 done
 
 which_python=$(which python3)
-if [ $which_python != '/usr/local/bin/python3' ]
+if [ $which_python != "$(brew --prefix)/bin/python3" ]
 then
   message="🚫 Python path is not correct"
   echo "$message" 1>&2
