@@ -45,7 +45,7 @@ log_version_info() {
     "node") version_info="$(node -v)" ;;
     "rbenv") version_info="$(rbenv -v)" ;;
     "ruby-build") version_info="$(ruby-build --version)" ;;
-    "postgres") version_info="$(postgres --version)" ;;
+    "postgresql@14") version_info="$(postgresql@14 --version)" ;;
     # java seems to print to stderr for no apparent reason. `2>&1` redirects
     # stderr to stdout to silence the CLI output and allow it to be captured in
     # the version_info variable
