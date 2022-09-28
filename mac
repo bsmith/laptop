@@ -155,7 +155,7 @@ tap "adoptopenjdk/openjdk"
 cask "adoptopenjdk/openjdk/adoptopenjdk8"
 
 # Databases
-brew "postgres", restart_service: true
+brew "postgresql@14", restart_service: true
 tap "mongodb/brew"
 brew  "mongodb-community", restart_service: true
 cask "mongodb-compass"
