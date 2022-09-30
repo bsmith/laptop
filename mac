@@ -92,8 +92,8 @@ fi
 # shellcheck disable=SC2016
 append_to_zshrc 'export PATH="$HOME/.bin:$PATH"'
 
-HOMEBREW_PREFIX="/usr/local"
-create_folder_if_not_there "$HOMEBREW_PREFIX"
+#HOMEBREW_PREFIX="/usr/local"
+#create_folder_if_not_there "$HOMEBREW_PREFIX"
 
 case "$SHELL" in
   */zsh) : ;;
@@ -112,21 +112,21 @@ gem_install_or_update() {
   fi
 }
 
-if ! command -v brew >/dev/null; then
-  fancy_echo "Installing Homebrew ..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    append_to_zshrc '# recommended by brew doctor'
-
-    # shellcheck disable=SC2016
-    append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
-    export PATH="/usr/local/bin:$PATH"
-    ARCH=$(arch)
-    if [[ "$ARCH" == "arm64" ]]; then
-      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    fi
-fi
+#if ! command -v brew >/dev/null; then
+#  fancy_echo "Installing Homebrew ..."
+#    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#
+#    append_to_zshrc '# recommended by brew doctor'
+#
+#    # shellcheck disable=SC2016
+#    append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
+#    export PATH="/usr/local/bin:$PATH"
+#    ARCH=$(arch)
+#    if [[ "$ARCH" == "arm64" ]]; then
+#      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+#      eval "$(/opt/homebrew/bin/brew shellenv)"
+#    fi
+#fi
 
 if brew list --formula | grep -Fq brew-cask; then
   fancy_echo "Uninstalling old Homebrew-Cask ..."
@@ -172,7 +172,7 @@ curl -L \
 fancy_echo "Installing GUI apps"
 
 # Web browsing
-install_gui_app "google chrome" "google-chrome"
+#install_gui_app "google chrome" "google-chrome"
 
 # Text editing
 install_gui_app "atom" "atom"
@@ -188,7 +188,7 @@ install_gui_app "insomnia" "insomnia"
 install_gui_app "postico" "postico"
 
 # VSCode
-install_gui_app "visual studio code" "visual-studio-code"
+#install_gui_app "visual studio code" "visual-studio-code"
 cat << EOF >> ~/.zshrc
 # Add Visual Studio Code (code)
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
@@ -226,9 +226,9 @@ if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
 
-fancy_echo "Setting Atom as default text editor ..."
-append_to_zshrc "export EDITOR='atom -nw'"
-append_to_zshrc "export PAGER='less -f'"
+#fancy_echo "Setting Atom as default text editor ..."
+#append_to_zshrc "export EDITOR='atom -nw'"
+#append_to_zshrc "export PAGER='less -f'"
 
 fancy_echo "Rebinding # to the § key"
 create_folder_if_not_there "$HOME/Library/KeyBindings"
